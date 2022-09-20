@@ -9,6 +9,13 @@
   box-sizing: border-box;
 }
 
+body {
+  background-image: url(./bg/3.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 main {
   display: flex;
   justify-content: center;
@@ -21,10 +28,11 @@ h1 {
   font-family: Month;
   font-weight: 700px;
   margin: 10px;
+  color: #fff;
 }
 
 .elements {
-  background-color: #eeeeee;
+  background-color: #eeeeeecf;
   width: 25rem;
   border-radius: 10px;
   padding: 20px 30px 0 20px;
@@ -66,13 +74,19 @@ h1 {
 
     i {
       border-radius: 5px;
-      border: none;
-      background-color: #e0e0e0;
+      border: 2px solid #c8cceb;
+      background-color: #c8cceb;
       padding: 5px;
+
+      &:active {
+        transform: scale(1.1);
+      }
     }
+
     p {
-      padding: 5px;
+      padding: 8px;
       font-size: 12px;
+      font-weight: bold;
     }
   }
   .remove {
@@ -83,6 +97,9 @@ h1 {
     padding: 3px;
     border-radius: 2px;
     margin: 4px 0 17px;
+    &:active {
+      transform: scale(1.1);
+    }
   }
   p {
     font-size: 14px;
@@ -106,7 +123,7 @@ h1 {
 }
 
 .continue {
-  margin-left: 44%;
+  margin: 1rem 10rem;
   width: 5rem;
   padding: 14px 0;
   border-radius: 10px;
