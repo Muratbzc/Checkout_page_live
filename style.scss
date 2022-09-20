@@ -115,3 +115,13 @@ h1 {
   font-weight: 600;
   border: none;
 }
+
+@media screen and (max-width: 500px) {
+  .elements {
+    width: 20rem;
+    img {
+      width: 8rem;
+      height: 9rem;
+    }
+  }
+}
