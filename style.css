@@ -57,9 +57,9 @@ h1 {
   margin-bottom: 2rem;
 }
 .right img {
-  width: 9rem;
+  width: 10rem;
   border-radius: 10px;
-  height: 10rem;
+  height: 12rem;
 }
 .right .buttons {
   display: flex;
@@ -68,7 +68,7 @@ h1 {
   width: 6rem;
   border-radius: 5px;
   padding: 3px;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 .right .buttons i {
   border-radius: 5px;
@@ -91,7 +91,7 @@ h1 {
   font-size: 12px;
   padding: 3px;
   border-radius: 2px;
-  margin: 4px 0 17px;
+  margin: 10px 0 20px;
 }
 .right .remove:active {
   transform: scale(1.1);
@@ -132,9 +132,5 @@ h1 {
   .elements {
     width: 20rem;
     margin: auto;
-  }
-  .elements img {
-    width: 8rem;
-    height: 9rem;
   }
 }/*# sourceMappingURL=style.css.map */
