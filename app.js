@@ -1,4 +1,15 @@
-function lug(e, p) {
+const taxRate = 0.18;
+const shippingPrice = 19;
+const shippingFreePrice = 300;
+
+window.addEventListener("load", () => {
+  localStorage.setItem("taxRate", taxRate);
+  localStorage.setItem("shippingPrice", shippingPrice);
+  localStorage.setItem("shippingFreePrice", shippingFreePrice);
+  cartTotal();
+});
+
+function product(e, p) {
   if (e.target.classList.contains("fa-plus")) {
     let n = Number(e.target.previousElementSibling.innerText);
     n++;
@@ -23,9 +34,14 @@ const cartTotal = function () {
   let subtotal = 0;
   productTotal.forEach((p) => (subtotal += Number(p.innerText)));
   document.getElementById("subtotal").innerText = subtotal.toFixed(2);
-  let tax = subtotal * 0.18;
+  let tax = subtotal * localStorage.getItem("taxRate");
   document.getElementById("tax").innerText = tax.toFixed(2);
-  let total = subtotal + tax + 19;
+  let shipping =
+    subtotal > 0 && subtotal < localStorage.getItem("shippingFreePrice")
+      ? localStorage.getItem("shippingPrice")
+      : 0;
+  document.getElementById("shipping").innerText = shipping;
+  let total = Number(subtotal + tax + shipping);
   document.getElementById("total").innerText = total.toFixed(2);
 };
 
@@ -34,12 +50,12 @@ const shoes = document.querySelector(".shoes");
 const clock = document.querySelector(".clock");
 
 bag.addEventListener("click", (e) => {
-  lug(e, 25.99);
+  product(e, 25.99);
 });
 
 shoes.addEventListener("click", (e) => {
-  lug(e, 45.99);
+  product(e, 45.99);
 });
 clock.addEventListener("click", (e) => {
-  lug(e, 74.99);
+  product(e, 74.99);
 });
